@@ -1,15 +1,30 @@
 <template>
-    <fc-designer ref="designer" @save="handleSave" :config="config" height="120vh" />
+    <fc-designer ref="designer" @save="handleSave" :config="config" height="120vh">
+        <template #handle>
+            <el-button @click="showData" type="primary" size="small">查看json数据</el-button>
+        </template>
+    </fc-designer>
 </template>
 <script setup>
 import { onMounted, ref } from 'vue'
+import { jsx } from 'vue/jsx-runtime';
 // 可以在此处获取设计器实例或进行其他操作
 const designer = ref(null)
 
 const config = ref({
     // 显示保存按钮
     showSaveBtn: true,
+    showBaseForm: false
 })
+
+const showData = () => {
+    const ruleJson = designer.value.getJson()
+    //获取表单的配置
+    const optionsJson = designer.value.getOptionsJson()
+
+    const data = { ruleJson, optionsJson }
+    alert(JSON.stringify(data))
+}
 
 
 // 保存事件处理函数

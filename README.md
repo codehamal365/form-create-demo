@@ -9,3 +9,5 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
 
 - ![form-create](https://www.form-create.com/v3/element-ui/global)
 - ![form-designer](https://view.form-create.com/)
+
+>> https://pro.form-create.com/view/ 高级版能在线获取designer的json数据
