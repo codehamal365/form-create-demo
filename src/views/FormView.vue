@@ -122,5 +122,9 @@ if (dataStr) {
 
   rule.value = formCreate.parseJson(ruleJson)
   option.value = formCreate.parseJson(optionsJson)
+  option.value.onSubmit = (formData) => {
+    alert(JSON.stringify(formData))
+  }
+  option.value.resetBtn = true
 }
 </script>
