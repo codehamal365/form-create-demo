@@ -1,13 +1,13 @@
 <template>
     <fc-designer ref="designer" @save="handleSave" :config="config" height="120vh">
         <template #handle>
+            <el-button @click="goto" type="primary" size="small">新窗口预览</el-button>
             <el-button @click="showData" type="primary" size="small">查看json数据</el-button>
         </template>
     </fc-designer>
 </template>
 <script setup>
 import { onMounted, ref } from 'vue'
-import { jsx } from 'vue/jsx-runtime';
 // 可以在此处获取设计器实例或进行其他操作
 const designer = ref(null)
 
@@ -24,6 +24,10 @@ const showData = () => {
 
     const data = { ruleJson, optionsJson }
     alert(JSON.stringify(data))
+}
+
+const goto = () => {
+    window.open("view", "_blank")
 }
 
 
