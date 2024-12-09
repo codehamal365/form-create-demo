@@ -14,7 +14,8 @@ const designer = ref(null)
 const config = ref({
     // 显示保存按钮
     showSaveBtn: true,
-    showBaseForm: true
+    showBaseForm: true,
+    fieldReadonly: false
 })
 
 const showData = () => {
